@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Согласие на обработку файлов cookie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=229" />
+  </head>
+  <body id="top"><header class="site-header">
+      <div class="container site-header__inner">
+        <div class="site-header__cluster">
+          <div class="site-header__start brand">
+          <a href="index.html" class="logo" aria-label="Двери Голливуда на главную">
+            <img class="logo__img" src="assets/Logo.webp" width="154" height="64" alt="Hollywood Door" />
+          </a>
+          <button type="button" id="catalogMegaOpen" class="nav__catalog-btn" aria-label="Открыть каталог дверей" aria-haspopup="true" aria-expanded="false" aria-controls="catalogMega">
+              <svg class="nav__catalog-icon" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+                <circle class="nav__catalog-icon__circle" cx="20" cy="20" r="20" />
+                <rect class="nav__catalog-icon__line" x="13" y="16" width="14" height="2" rx="1" />
+                <rect class="nav__catalog-icon__line" x="13" y="22" width="14" height="2" rx="1" />
+              </svg>
+            </button>
+            <a class="nav__catalog-text" href="index.html#collections">Каталог дверей</a>
+          </div>
+          <nav class="site-header__nav nav" aria-label="Основное меню">
+          <a class="nav__link" href="index.html#about">О компании</a>
+          <a class="nav__link" href="index.html#custom">Двери на заказ</a>
+          <a class="nav__link" href="index.html#geo">География продаж</a>
+          <a class="nav__link" href="index.html#dealers">Стать дилером</a>
+          <a class="nav__link" href="index.html#contacts">Контакты</a>
+          </nav>
+        </div>
+        <div class="site-header__end header-tools">
+          <div class="header-tools__contact">
+            <span class="header-tools__max">MAX</span>
+            <a class="header-tools__phone" href="tel:+79872856270" aria-label="+7 987 285 62 70">
+              <span class="header-tool-block header-tool-block--phone">
+                <img class="header-tool-block__frame" src="assets/RamkaLypi.webp" width="48" height="47" alt="" />
+                <span class="header-tool-block__inner">
+                  <svg class="header-tools__phone-svg" viewBox="0 0 17 17" width="17" height="17" fill="none" aria-hidden="true">
+                    <path d="M0 0.9625C0 0.80972 0.00367016 0.6493 0.0110002 0.48125C0.0189402 0.31319 0.0305498 0.15278 0.0458298 0H5.40833L6.325 4.58333L3.66667 7.2417C4.36944 8.4028 5.20208 9.4686 6.1646 10.439C7.1271 11.4088 8.1583 12.2146 9.2583 12.8562L11.8938 10.2437L16.5 11.0917V16.4542C16.3472 16.4847 16.1868 16.5 16.0187 16.5H15.5375C13.5667 16.5 11.6456 16.0606 9.7744 15.1818C7.9026 14.3037 6.241 13.1426 4.78958 11.6985C3.33819 10.2551 2.17708 8.5977 1.30625 6.7265C0.43542 4.85467 0 2.93333 0 0.9625Z" fill="currentColor" />
+                  </svg>
+                </span>
+              </span>
+              <span class="header-tools__phone-text">+7 987 285 62 70</span>
+            </a>
+          </div>
+          <button type="button" class="header-tools__search header-tools__icon" aria-label="Поиск">
+            <span class="header-tool-block header-tool-block--search">
+              <img class="header-tool-block__frame" src="assets/RamkaLypi.webp" width="48" height="47" alt="" />
+              <span class="header-tool-block__inner">
+                <img src="assets/Lypa.webp" width="13" height="13" alt="" />
+              </span>
+            </span>
+          </button>
+          <a class="header-tools__cart" href="#" aria-label="Корзина, 6 товаров">
+            <span class="header-tool-block header-tool-block--cart">
+              <img class="header-tool-block__frame" src="assets/RamkaKorzini.webp" width="65" height="47" alt="" />
+              <span class="header-tool-block__inner header-tool-block__inner--cart">
+                <img src="assets/Korzina.webp" width="14" height="16" alt="" />
+                <span class="header-tools__badge" aria-hidden="true">6</span>
+              </span>
+            </span>
+          </a>
+          <button type="button" class="header-tools__menu" aria-label="Открыть меню">
+            <span class="header-tool-block header-tool-block--menu">
+              <img class="header-tool-block__frame" src="assets/RamkaLypi.webp" width="48" height="47" alt="" />
+              <span class="header-tool-block__inner">
+                <span class="header-tools__menu-bars" aria-hidden="true"></span>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+        <div class="catalog-mega" id="catalogMega" hidden aria-hidden="true">
+      <div class="catalog-mega__backdrop"></div>
+      <div class="container catalog-mega__sheet-wrap">
+        <div class="catalog-mega__sheet" role="dialog" aria-modal="true" aria-labelledby="catalogMegaTitle">
+          <div class="catalog-mega__inner">
+            <h2 id="catalogMegaTitle" class="visually-hidden">Каталог дверей</h2>
+            <div class="catalog-mega__layout">
+              <aside class="catalog-mega__sidebar" aria-label="Стили дверей">
+                <ul class="catalog-mega__primary">
+                  <li>
+                    <a href="katalog-neoklassika.html" id="mega-parent-neo" data-mega-subpanel="mega-sub-neo" aria-controls="mega-sub-neo" aria-expanded="false">Неоклассика</a>
+                  </li>
+                  <li>
+                    <a href="index.html#col-classic" id="mega-parent-classic" data-mega-subpanel="mega-sub-classic" aria-controls="mega-sub-classic" aria-expanded="false">Классика</a>
+                  </li>
+                  <li>
+                    <a href="index.html#col-modern" id="mega-parent-modern" data-mega-subpanel="mega-sub-modern" aria-controls="mega-sub-modern" aria-expanded="false">Современный стиль</a>
+                  </li>
+                </ul>
+              </aside>
+              <div class="catalog-mega__main">
+                <div class="catalog-mega__cols">
+                  <div class="catalog-mega__sub-panel" id="mega-sub-neo" hidden>
+                    <ul class="catalog-mega__sub">
+                      <li><a href="katalog-neoklassika.html">Дарлинг Денди</a></li>
+                      <li><a href="katalog-neoklassika.html">Сан Рейн</a></li>
+                      <li><a href="katalog-neoklassika.html">Небо</a></li>
+                      <li><a href="katalog-neoklassika.html">Тревел Полар Экспресс</a></li>
+                      <li><a href="katalog-neoklassika.html">Вест Сайд</a></li>
+                      <li><a href="katalog-neoklassika.html">Бродвей</a></li>
+                      <li><a href="katalog-neoklassika.html">Голливуд</a></li>
+                    </ul>
+                  </div>
+                  <div class="catalog-mega__sub-panel" id="mega-sub-classic" hidden>
+                    <ul class="catalog-mega__sub">
+                      <li><a href="index.html#col-classic">Монреаль</a></li>
+                      <li><a href="index.html#col-classic">Версаль</a></li>
+                      <li><a href="index.html#col-classic">Олимп</a></li>
+                      <li><a href="index.html#col-classic">Рим</a></li>
+                      <li><a href="index.html#col-classic">Вена</a></li>
+                      <li><a href="index.html#col-classic">Прага</a></li>
+                      <li><a href="index.html#col-classic">Лондон</a></li>
+                    </ul>
+                  </div>
+                  <div class="catalog-mega__sub-panel" id="mega-sub-modern" hidden>
+                    <ul class="catalog-mega__sub">
+                      <li><a href="index.html#col-modern">Милан</a></li>
+                      <li><a href="index.html#col-modern">Токио</a></li>
+                      <li><a href="index.html#col-modern">Берлин</a></li>
+                      <li><a href="index.html#col-modern">Париж</a></li>
+                      <li><a href="index.html#col-modern">Нью-Йорк</a></li>
+                      <li><a href="index.html#col-modern">Сидней</a></li>
+                      <li><a href="index.html#col-modern">Дубай</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true" hidden>
+      <div class="mobile-menu__backdrop"></div>
+      <div class="mobile-menu__panel">
+        <a href="index.html" class="mobile-menu__brand" aria-label="На главную">
+          <img class="logo__img mobile-menu__logo" src="assets/Logo.webp" width="154" height="64" alt="Hollywood Door" />
+        </a>
+        <button type="button" class="mobile-menu__close" aria-label="Закрыть меню">&times;</button>
+        <nav class="mobile-menu__links" aria-label="Мобильное меню">
+          <a href="index.html#collections">Каталог дверей</a>
+          <a href="index.html#about">О компании</a>
+          <a href="index.html#custom">Двери на заказ</a>
+          <a href="index.html#geo">География продаж</a>
+          <a href="index.html#dealers">Стать дилером</a>
+          <a href="index.html#contacts">Контакты</a>
+          <a class="mobile-menu__phone" href="tel:+79872856270">+7 987 285-62-70</a>
+        </nav>
+      </div>
+    </div><main class="legal-page">
+      <div class="container">
+        <article class="legal-card">
+          <h1 class="legal-title">Заголовок 1</h1>
+          <p class="legal-text">
+            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Но текст он
+            предложения обеспечивает продолжил всеми текста запятой, решила образ за снова грустный пунктуация выйти
+            языкового деревни своего на берегу жизни речью рукопись всемогущая свою большого рекламных все взобравшись?
+            Ему рукописи рекламных одна продолжил снова которой, реторический вдали букв власти.0
+          </p>
+
+          <h2 class="legal-subtitle">Заголовок 2</h2>
+          <p class="legal-text">
+            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Но текст он
+            предложения обеспечивает продолжил всеми текста запятой, решила образ за снова грустный пунктуация выйти
+            языкового деревни своего на берегу жизни речью рукопись всемогущая свою большого рекламных все взобравшись?
+            Ему рукописи рекламных одна продолжил снова которой, реторический вдали букв власти.0
+          </p>
+
+          <h3 class="legal-subtitle">Заголовок 3</h3>
+          <ul class="legal-list">
+            <li>Далеко-далеко за словесными горами в стране гласных</li>
+            <li>Далеко-далеко за словесными горами в стране гласных</li>
+            <li>Далеко-далеко за словесными горами в стране гласных</li>
+          </ul>
+        </article>
+      </div>
+    </main><footer class="site-footer" id="contacts">
+      <div class="container site-footer__inner">
+        <nav class="site-footer__nav" aria-label="Навигация в подвале">
+          <a href="index.html#about">О компании</a>
+          <a href="index.html#collections">Каталог</a>
+          <a href="index.html#custom">Двери на заказ</a>
+          <a href="index.html#geo">География продаж</a>
+          <a href="index.html#dealers">Стать дилером</a>
+          <a href="index.html#contacts">Контакты</a>
+        </nav>
+        <div class="site-footer__rule" aria-hidden="true"></div>
+        <div class="site-footer__main">
+          <p class="site-footer__hours">Пн–Пт: 08:00 – 18:00</p>
+          <a class="site-footer__phone" href="tel:+79872856270">+7 987 285-62-70</a>
+          <a class="site-footer__email" href="mailto:h-door@mail.ru">h-door@mail.ru</a>
+          <div class="site-footer__actions">
+            <a class="site-footer__btn" href="#" id="maxContactBtn">Написать в MAX</a>
+            <button type="button" class="site-footer__btn" id="callbackBtn">Обратная связь</button>
+          </div>
+        </div>
+        <div class="site-footer__rule" aria-hidden="true"></div>
+        <div class="site-footer__hall">
+          <p class="site-footer__hall-label">Выставочный зал</p>
+          <p class="site-footer__address">г. Набережные Челны, пр. Сююмбике, 67В, ТЦ «На Сююмбике»</p>
+        </div>
+        <div class="site-footer__rule site-footer__rule--end" aria-hidden="true"></div>
+        <nav class="site-footer__legal" aria-label="Документы и соглашения">
+          <a href="PolitikaConfidencialnosti.html">Политика конфиденциальности</a>
+          <a href="SoglasieNaObrabotky.html">Согласие на обработку персональных данных</a>
+          <a href="SoglasieCookie.html">Согласие на обработку cookie</a>
+          <a href="PublichnayaAferta.html">Публичная оферта</a>
+          <a href="Ysloviya.html">Условия</a>
+        </nav>
+        <div class="site-footer__bottom">
+          <span class="site-footer__copy">Двери Голливуда © 2026</span>
+          <a class="site-footer__bottom-link" href="PolitikaConfidencialnosti.html">Политика конфиденциальности</a>
+          <a class="site-footer__bottom-link site-footer__bottom-link--credit" href="https://oxbox.ru/" target="_blank" rel="noopener noreferrer">Разработано в OXBOX</a>
+        </div>
+      </div>
+    </footer>
+
+<div class="consult-modal" id="consultModal" aria-hidden="true">
+      <div class="consult-modal__backdrop"></div>
+      <div class="consult-modal__dialog" role="dialog" aria-labelledby="consultModalTitle">
+        <button type="button" class="consult-modal__close" aria-label="Закрыть">&times;</button>
+        <h3 class="consult-modal__title" id="consultModalTitle">Заявка на консультацию</h3>
+        <form class="consult-modal__form" id="consultModalForm">
+          <div class="consult-modal__field">
+            <label class="consult-modal__label">
+              <input type="text" name="name" placeholder=" " autocomplete="name" />
+              <span class="consult-modal__label-text">Ваше имя</span>
+            </label>
+          </div>
+          <div class="consult-modal__field">
+            <label class="consult-modal__label">
+              <input type="tel" name="phone" placeholder=" " autocomplete="tel" />
+              <span class="consult-modal__label-text">Номер телефона</span>
+            </label>
+          </div>
+          <label class="consult-modal__checkbox">
+            <input type="checkbox" />
+            <a href="SoglasieNaObrabotky.html">Соглашаюсь с обработкой персональных данных</a>
+          </label>
+          <button type="submit" class="consult-modal__submit">Перезвоните мне</button>
+          <p class="consult-modal__note">
+            Отправляя заявку, вы принимаете условия
+            <a href="PublichnayaAferta.html">публичной оферты</a> и подтверждаете согласие с
+            <a href="PolitikaConfidencialnosti.html">политикой обработки персональных данных</a>.
+          </p>
+        </form>
+      </div>
+    </div>
+
+        <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Уведомление о cookie" hidden>
+      <span class="cookie-banner__icon" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <mask id="cookieBiteMaskDvCook">
+              <rect width="40" height="40" fill="#ffffff" />
+              <circle cx="29.7" cy="13.4" r="4.6" fill="#000000" />
+              <circle cx="32.9" cy="17.8" r="3.3" fill="#000000" />
+              <circle cx="26.7" cy="10.8" r="2.4" fill="#000000" />
+            </mask>
+          </defs>
+          <circle cx="20" cy="20" r="14" fill="#c41e3a" mask="url(#cookieBiteMaskDvCook)" />
+          <circle cx="14.3" cy="14.1" r="1.7" fill="#86151f" />
+          <circle cx="21.6" cy="12.6" r="1.6" fill="#86151f" />
+          <circle cx="16.2" cy="19.4" r="1.5" fill="#86151f" />
+          <circle cx="23.7" cy="20.2" r="1.9" fill="#86151f" />
+          <circle cx="18.8" cy="25.5" r="1.7" fill="#86151f" />
+          <circle cx="32.3" cy="13.7" r="1.2" fill="#a83245" />
+          <circle cx="34.6" cy="17.1" r="1" fill="#a83245" />
+          <circle cx="33.5" cy="10.2" r="1.1" fill="#a83245" />
+        </svg>
+      </span>
+      <p class="cookie-banner__text">
+        Продолжая использовать этот сайт и нажимая кнопку «Принимаю», вы даёте
+        <a href="SoglasieCookie.html" class="cookie-banner__link">согласие на обработку файлов cookie</a>
+        и использование Яндекс.Метрики.
+      </p>
+      <button type="button" class="cookie-banner__btn" id="cookieBannerAccept">Принимаю</button>
+    </div>
+    <script src="main.js?v=26" defer></script>
+  </body>
+</html>
