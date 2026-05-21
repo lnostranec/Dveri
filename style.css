@@ -1203,9 +1203,9 @@ body.mobile-menu-open {
 
 .about-split {
   width: 100%;
-  max-width: 100%;
-  margin-top: 48px;
-  padding: 0;
+  max-width: var(--layout-max);
+  margin: 48px auto 0;
+  padding-inline: var(--gutter);
   overflow-x: clip;
   box-sizing: border-box;
 }
@@ -1679,13 +1679,13 @@ body.mobile-menu-open {
   .about-split__foot {
     align-items: center;
     width: 100%;
-    padding: 48px var(--gutter) 0;
+    padding: 48px 0 0;
   }
 
   .about-split__desc {
     max-width: min(var(--about-desc-width), 100%);
     margin-inline: auto;
-    padding-inline: var(--gutter);
+    padding-inline: 0;
     text-align: center;
   }
 
@@ -3141,6 +3141,8 @@ body.catalog-mega-open .site-header {
   width: 100%;
   max-width: var(--layout-max);
   margin: 0 auto;
+  padding-inline: var(--gutter);
+  box-sizing: border-box;
   height: auto;
   min-height: 0;
   max-height: none;
@@ -3319,7 +3321,7 @@ body.catalog-mega-open .site-header {
   .door-catalog-intro__crumb {
     height: auto;
     min-height: 320px;
-    padding: 0 var(--gutter) 32px;
+    padding: 0 0 32px;
   }
 
   .door-catalog__breadcrumbs {
