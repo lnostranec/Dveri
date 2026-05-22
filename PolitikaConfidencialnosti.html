@@ -6,8 +6,11 @@
     <title>Политика конфиденциальности</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=229" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=254" />
   </head>
   <body id="top"><header class="site-header">
       <div class="container site-header__inner">
@@ -142,7 +145,7 @@
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true" hidden>
       <div class="mobile-menu__backdrop"></div>
-      <div class="mobile-menu__panel">
+            <div class="mobile-menu__panel">
         <a href="index.html" class="mobile-menu__brand" aria-label="На главную">
           <img class="logo__img mobile-menu__logo" src="assets/Logo.webp" width="154" height="64" alt="Hollywood Door" />
         </a>
@@ -154,6 +157,9 @@
           <a href="index.html#geo">География продаж</a>
           <a href="index.html#dealers">Стать дилером</a>
           <a href="index.html#contacts">Контакты</a>
+          <button type="button" class="mobile-menu__callback" data-open-consult-modal>
+            Перезвоните мне
+          </button>
           <a class="mobile-menu__phone" href="tel:+79872856270">+7 987 285-62-70</a>
         </nav>
       </div>
@@ -186,6 +192,12 @@
       </div>
     </main><footer class="site-footer" id="contacts">
       <div class="container site-footer__inner">
+        <div class="site-footer__bar">
+          <a href="index.html" class="site-footer__brand" aria-label="На главную">
+            <img class="logo__img site-footer__logo" src="assets/Logo.webp" width="154" height="64" alt="Hollywood Door" />
+          </a>
+          <a href="#top" class="site-footer__totop">Наверх</a>
+        </div>
         <nav class="site-footer__nav" aria-label="Навигация в подвале">
           <a href="index.html#about">О компании</a>
           <a href="index.html#collections">Каталог</a>
@@ -212,14 +224,17 @@
         <div class="site-footer__rule site-footer__rule--end" aria-hidden="true"></div>
         <nav class="site-footer__legal" aria-label="Документы и соглашения">
           <a href="PolitikaConfidencialnosti.html">Политика конфиденциальности</a>
-          <a href="SoglasieNaObrabotky.html">Согласие на обработку персональных данных</a>
+          <a href="SoglasieNaObrabotky.html" class="site-footer__legal-extra">Согласие на обработку персональных данных</a>
           <a href="SoglasieCookie.html">Согласие на обработку cookie</a>
-          <a href="PublichnayaAferta.html">Публичная оферта</a>
-          <a href="Ysloviya.html">Условия</a>
+          <a href="PublichnayaAferta.html" class="site-footer__legal-extra">Публичная оферта</a>
+                    <a href="Ysloviya.html" class="site-footer__legal-extra">Условия</a>
         </nav>
+
+        <div class="site-footer__rule site-footer__rule--meta-mobile" aria-hidden="true"></div>
+
         <div class="site-footer__bottom">
           <span class="site-footer__copy">Двери Голливуда © 2026</span>
-          <a class="site-footer__bottom-link" href="PolitikaConfidencialnosti.html">Политика конфиденциальности</a>
+          <a class="site-footer__bottom-link site-footer__bottom-link--dup" href="PolitikaConfidencialnosti.html">Политика конфиденциальности</a>
           <a class="site-footer__bottom-link site-footer__bottom-link--credit" href="https://oxbox.ru/" target="_blank" rel="noopener noreferrer">Разработано в OXBOX</a>
         </div>
       </div>
@@ -233,7 +248,7 @@
         <form class="consult-modal__form" id="consultModalForm">
           <div class="consult-modal__field">
             <label class="consult-modal__label">
-              <input type="text" name="name" placeholder=" " autocomplete="name" />
+              <input type="text" name="name" placeholder=" " autocomplete="name" inputmode="text" aria-label="Ваше имя" />
               <span class="consult-modal__label-text">Ваше имя</span>
             </label>
           </div>
@@ -268,15 +283,15 @@
               <circle cx="26.7" cy="10.8" r="2.4" fill="#000000" />
             </mask>
           </defs>
-          <circle cx="20" cy="20" r="14" fill="#c41e3a" mask="url(#cookieBiteMaskDvPol)" />
-          <circle cx="14.3" cy="14.1" r="1.7" fill="#86151f" />
-          <circle cx="21.6" cy="12.6" r="1.6" fill="#86151f" />
-          <circle cx="16.2" cy="19.4" r="1.5" fill="#86151f" />
-          <circle cx="23.7" cy="20.2" r="1.9" fill="#86151f" />
-          <circle cx="18.8" cy="25.5" r="1.7" fill="#86151f" />
-          <circle cx="32.3" cy="13.7" r="1.2" fill="#a83245" />
-          <circle cx="34.6" cy="17.1" r="1" fill="#a83245" />
-          <circle cx="33.5" cy="10.2" r="1.1" fill="#a83245" />
+          <circle cx="20" cy="20" r="14" fill="#9d0d19" mask="url(#cookieBiteMaskDvPol)" />
+          <circle cx="14.3" cy="14.1" r="1.7" fill="#9d0d19" />
+          <circle cx="21.6" cy="12.6" r="1.6" fill="#9d0d19" />
+          <circle cx="16.2" cy="19.4" r="1.5" fill="#9d0d19" />
+          <circle cx="23.7" cy="20.2" r="1.9" fill="#9d0d19" />
+          <circle cx="18.8" cy="25.5" r="1.7" fill="#9d0d19" />
+          <circle cx="32.3" cy="13.7" r="1.2" fill="#9d0d19" />
+          <circle cx="34.6" cy="17.1" r="1" fill="#9d0d19" />
+          <circle cx="33.5" cy="10.2" r="1.1" fill="#9d0d19" />
         </svg>
       </span>
       <p class="cookie-banner__text">
@@ -286,6 +301,6 @@
       </p>
       <button type="button" class="cookie-banner__btn" id="cookieBannerAccept">Принимаю</button>
     </div>
-    <script src="main.js?v=26" defer></script>
+    <script src="main.js?v=28" defer></script>
   </body>
 </html>

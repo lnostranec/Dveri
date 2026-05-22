@@ -6,8 +6,11 @@
     <title>Коллекция Премьера — каталог | Двери Голливуда</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=230" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=254" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body id="top" class="page-catalog page-collection">
@@ -136,7 +139,7 @@
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true" hidden>
       <div class="mobile-menu__backdrop"></div>
-      <div class="mobile-menu__panel">
+            <div class="mobile-menu__panel">
         <a href="index.html" class="mobile-menu__brand" aria-label="На главную">
           <img class="logo__img mobile-menu__logo" src="assets/Logo.webp" width="154" height="64" alt="Hollywood Door" />
         </a>
@@ -148,6 +151,9 @@
           <a href="index.html#geo">География продаж</a>
           <a href="index.html#dealers">Стать дилером</a>
           <a href="index.html#contacts">Контакты</a>
+          <button type="button" class="mobile-menu__callback" data-open-consult-modal>
+            Перезвоните мне
+          </button>
           <a class="mobile-menu__phone" href="tel:+79872856270">+7 987 285-62-70</a>
         </nav>
       </div>
@@ -179,11 +185,102 @@
       <div class="door-collection-body">
         <div class="container door-collection-filters" aria-label="Фильтры каталога">
           <div class="door-collection-filters__inner">
-            <button type="button" class="door-collection-filters__btn"><span>Цена, ₽</span><svg class="door-collection-filters__chev" viewBox="0 0 12 8" width="10" height="6" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <button type="button" class="door-collection-filters__btn"><span>Материал</span><svg class="door-collection-filters__chev" viewBox="0 0 12 8" width="10" height="6" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <button type="button" class="door-collection-filters__btn"><span>Цвет</span><svg class="door-collection-filters__chev" viewBox="0 0 12 8" width="10" height="6" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <button type="button" class="door-collection-filters__btn"><span>Форма</span><svg class="door-collection-filters__chev" viewBox="0 0 12 8" width="10" height="6" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <button type="button" class="door-collection-filters__btn"><span>Остекление</span><svg class="door-collection-filters__chev" viewBox="0 0 12 8" width="10" height="6" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="door-collection-filters__group">
+              <button
+                type="button"
+                class="door-collection-filters__btn"
+                data-filter-toggle
+                aria-expanded="false"
+                aria-controls="filter-panel-price"
+              >
+                <span class="door-collection-filters__label" data-filter-label>Цена, ₽</span>
+                <svg class="door-collection-filters__chev" viewBox="0 0 12 8" width="10" height="6" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="door-collection-filters__panel" id="filter-panel-price" hidden>
+                <ul class="door-collection-filters__list">
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="price" data-filter-value="asc">По возрастанию</button></li>
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="price" data-filter-value="desc">По убыванию</button></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="door-collection-filters__group">
+              <button
+                type="button"
+                class="door-collection-filters__btn"
+                data-filter-toggle
+                aria-expanded="false"
+                aria-controls="filter-panel-material"
+              >
+                <span class="door-collection-filters__label" data-filter-label>Материал</span>
+                <svg class="door-collection-filters__chev" viewBox="0 0 12 8" width="10" height="6" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="door-collection-filters__panel" id="filter-panel-material" hidden>
+                <ul class="door-collection-filters__list">
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="material" data-filter-value="wood">Дерево</button></li>
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="material" data-filter-value="metal">Металл</button></li>
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="material" data-filter-value="plastic">Пластик</button></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="door-collection-filters__group">
+              <button
+                type="button"
+                class="door-collection-filters__btn"
+                data-filter-toggle
+                aria-expanded="false"
+                aria-controls="filter-panel-color"
+              >
+                <span class="door-collection-filters__label" data-filter-label>Цвет</span>
+                <svg class="door-collection-filters__chev" viewBox="0 0 12 8" width="10" height="6" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="door-collection-filters__panel" id="filter-panel-color" hidden>
+                <ul class="door-collection-filters__list">
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="color" data-filter-value="black">Чёрный</button></li>
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="color" data-filter-value="white">Белый</button></li>
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="color" data-filter-value="brown">Коричневый</button></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="door-collection-filters__group">
+              <button
+                type="button"
+                class="door-collection-filters__btn"
+                data-filter-toggle
+                aria-expanded="false"
+                aria-controls="filter-panel-shape"
+              >
+                <span class="door-collection-filters__label" data-filter-label>Форма</span>
+                <svg class="door-collection-filters__chev" viewBox="0 0 12 8" width="10" height="6" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="door-collection-filters__panel" id="filter-panel-shape" hidden>
+                <ul class="door-collection-filters__list">
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="shape" data-filter-value="round">Круглая</button></li>
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="shape" data-filter-value="square">Квадратная</button></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="door-collection-filters__group">
+              <button
+                type="button"
+                class="door-collection-filters__btn"
+                data-filter-toggle
+                aria-expanded="false"
+                aria-controls="filter-panel-glazing"
+              >
+                <span class="door-collection-filters__label" data-filter-label>Остекление</span>
+                <svg class="door-collection-filters__chev" viewBox="0 0 12 8" width="10" height="6" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="door-collection-filters__panel" id="filter-panel-glazing" hidden>
+                <ul class="door-collection-filters__list">
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="glazing" data-filter-value="yes">Есть</button></li>
+                  <li><button type="button" class="door-collection-filters__option" data-filter-group="glazing" data-filter-value="no">Нет</button></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -516,6 +613,12 @@
       </div>
     </main><footer class="site-footer" id="contacts">
       <div class="container site-footer__inner">
+        <div class="site-footer__bar">
+          <a href="index.html" class="site-footer__brand" aria-label="На главную">
+            <img class="logo__img site-footer__logo" src="assets/Logo.webp" width="154" height="64" alt="Hollywood Door" />
+          </a>
+          <a href="#top" class="site-footer__totop">Наверх</a>
+        </div>
         <nav class="site-footer__nav" aria-label="Навигация в подвале">
           <a href="index.html#about">О компании</a>
           <a href="index.html#collections">Каталог</a>
@@ -542,14 +645,17 @@
         <div class="site-footer__rule site-footer__rule--end" aria-hidden="true"></div>
         <nav class="site-footer__legal" aria-label="Документы и соглашения">
           <a href="PolitikaConfidencialnosti.html">Политика конфиденциальности</a>
-          <a href="SoglasieNaObrabotky.html">Согласие на обработку персональных данных</a>
+          <a href="SoglasieNaObrabotky.html" class="site-footer__legal-extra">Согласие на обработку персональных данных</a>
           <a href="SoglasieCookie.html">Согласие на обработку cookie</a>
-          <a href="PublichnayaAferta.html">Публичная оферта</a>
-          <a href="Ysloviya.html">Условия</a>
+          <a href="PublichnayaAferta.html" class="site-footer__legal-extra">Публичная оферта</a>
+                    <a href="Ysloviya.html" class="site-footer__legal-extra">Условия</a>
         </nav>
+
+        <div class="site-footer__rule site-footer__rule--meta-mobile" aria-hidden="true"></div>
+
         <div class="site-footer__bottom">
           <span class="site-footer__copy">Двери Голливуда © 2026</span>
-          <a class="site-footer__bottom-link" href="PolitikaConfidencialnosti.html">Политика конфиденциальности</a>
+          <a class="site-footer__bottom-link site-footer__bottom-link--dup" href="PolitikaConfidencialnosti.html">Политика конфиденциальности</a>
           <a class="site-footer__bottom-link site-footer__bottom-link--credit" href="https://oxbox.ru/" target="_blank" rel="noopener noreferrer">Разработано в OXBOX</a>
         </div>
       </div>
@@ -563,7 +669,7 @@
         <form class="consult-modal__form" id="consultModalForm">
           <div class="consult-modal__field">
             <label class="consult-modal__label">
-              <input type="text" name="name" placeholder=" " autocomplete="name" />
+              <input type="text" name="name" placeholder=" " autocomplete="name" inputmode="text" aria-label="Ваше имя" />
               <span class="consult-modal__label-text">Ваше имя</span>
             </label>
           </div>
@@ -597,15 +703,15 @@
               <circle cx="26.7" cy="10.8" r="2.4" fill="#000000" />
             </mask>
           </defs>
-          <circle cx="20" cy="20" r="14" fill="#c41e3a" mask="url(#cookieBiteMaskNeo)" />
-          <circle cx="14.3" cy="14.1" r="1.7" fill="#86151f" />
-          <circle cx="21.6" cy="12.6" r="1.6" fill="#86151f" />
-          <circle cx="16.2" cy="19.4" r="1.5" fill="#86151f" />
-          <circle cx="23.7" cy="20.2" r="1.9" fill="#86151f" />
-          <circle cx="18.8" cy="25.5" r="1.7" fill="#86151f" />
-          <circle cx="32.3" cy="13.7" r="1.2" fill="#a83245" />
-          <circle cx="34.6" cy="17.1" r="1" fill="#a83245" />
-          <circle cx="33.5" cy="10.2" r="1.1" fill="#a83245" />
+          <circle cx="20" cy="20" r="14" fill="#9d0d19" mask="url(#cookieBiteMaskNeo)" />
+          <circle cx="14.3" cy="14.1" r="1.7" fill="#9d0d19" />
+          <circle cx="21.6" cy="12.6" r="1.6" fill="#9d0d19" />
+          <circle cx="16.2" cy="19.4" r="1.5" fill="#9d0d19" />
+          <circle cx="23.7" cy="20.2" r="1.9" fill="#9d0d19" />
+          <circle cx="18.8" cy="25.5" r="1.7" fill="#9d0d19" />
+          <circle cx="32.3" cy="13.7" r="1.2" fill="#9d0d19" />
+          <circle cx="34.6" cy="17.1" r="1" fill="#9d0d19" />
+          <circle cx="33.5" cy="10.2" r="1.1" fill="#9d0d19" />
         </svg>
       </span>
       <p class="cookie-banner__text">
@@ -617,6 +723,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-    <script src="main.js?v=26" defer></script>
+    <script src="main.js?v=28" defer></script>
   </body>
 </html>
