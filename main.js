@@ -358,39 +358,6 @@
   var desktopSwiper = null;
   var mobileSwiper = null;
 
-  function padSlideNum(n) {
-    return n < 10 ? "0" + n : String(n);
-  }
-
-  function syncAboutSlide(swiper, section) {
-    var slide = swiper.slides[swiper.activeIndex];
-    if (!slide || !section) return;
-
-    var slideTitle = slide.getAttribute("data-title");
-    var line1 = slide.getAttribute("data-desc-1");
-    var line2 = slide.getAttribute("data-desc-2");
-    var titleEl = section.querySelector(".about-split__grid--desktop .about-split__title");
-    var descLines = section.querySelectorAll(
-      ".about-split__grid--desktop .about-split__desc-line"
-    );
-    var pagerCurrent = section.querySelector(
-      ".about-split__grid--desktop .about-split__pager-current"
-    );
-
-    if (titleEl && slideTitle) {
-      titleEl.textContent = slideTitle;
-    }
-    if (descLines[0] && line1) {
-      descLines[0].textContent = line1;
-    }
-    if (descLines[1] && line2) {
-      descLines[1].textContent = line2;
-    }
-    if (pagerCurrent) {
-      pagerCurrent.textContent = padSlideNum(swiper.activeIndex + 1);
-    }
-  }
-
   function destroySwipers() {
     if (desktopSwiper) {
       desktopSwiper.destroy(true, true);
@@ -410,11 +377,9 @@
       (mobileEl && mobileEl.closest(".about-split"));
     if (!section) return;
 
-    var desktopGrid = section.querySelector(".about-split__grid--desktop");
-
     if (mq.matches && mobileEl) {
-      if (desktopGrid) {
-        desktopGrid.hidden = true;
+      if (desktopEl) {
+        desktopEl.hidden = true;
       }
       mobileEl.hidden = false;
       mobileEl.style.display = "";
@@ -426,12 +391,16 @@
         allowTouchMove: true,
         resistanceRatio: 0.85,
         watchOverflow: true,
+        touchStartPreventDefault: false,
+        touchAngle: 35,
+        threshold: 8,
       });
       return;
     }
 
-    if (desktopGrid) {
-      desktopGrid.hidden = false;
+    if (desktopEl) {
+      desktopEl.hidden = false;
+      desktopEl.style.display = "";
     }
     if (mobileEl) {
       mobileEl.hidden = true;
@@ -448,14 +417,9 @@
       allowTouchMove: true,
       resistanceRatio: 0.85,
       watchOverflow: true,
-      on: {
-        init: function () {
-          syncAboutSlide(this, section);
-        },
-        slideChange: function () {
-          syncAboutSlide(this, section);
-        },
-      },
+      touchStartPreventDefault: false,
+      touchAngle: 35,
+      threshold: 8,
     });
   }
 
@@ -475,9 +439,17 @@
   if (!swipers.length) return;
 
   function getCollectionLayout() {
-    var root = getComputedStyle(document.documentElement);
+    var root = getComputedStyle(document.body);
     var visible = parseInt(root.getPropertyValue("--collection-visible"), 10);
     var gap = parseFloat(root.getPropertyValue("--door-card-gap"));
+
+    if (
+      document.body.classList.contains("page-collection") &&
+      window.matchMedia("(max-width: 768px)").matches
+    ) {
+      visible = 1;
+      gap = 8;
+    }
 
     return {
       visible: visible > 0 ? visible : 4,
@@ -491,11 +463,21 @@
     if (!trackWidth) return;
 
     var slideW = (trackWidth - (layout.visible - 1) * layout.gap) / layout.visible;
+    slideW = Math.max(0, slideW);
     swiper.params.spaceBetween = layout.gap;
 
     swiper.slides.forEach(function (slide) {
-      slide.style.width = Math.max(0, slideW) + "px";
+      slide.style.width = slideW + "px";
     });
+
+    var block = swiper.el.closest(".collection-block");
+    if (block) {
+      var hitArea = block.querySelector(".collection-block__strip-hit-area");
+      if (hitArea) {
+        hitArea.style.setProperty("--collection-strip-w", slideW + "px");
+      }
+    }
+
     swiper.update();
   }
 
@@ -1050,6 +1032,10 @@
         panel.classList.toggle("is-active", show);
         panel.hidden = !show;
       });
+
+      if (typeof tab.scrollIntoView === "function") {
+        tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+      }
     });
   });
 
@@ -1270,4 +1256,81 @@
   root.addEventListener("mouseleave", function () {
     clearFilterHover(root);
   });
+})();
+
+(function initCartBadgePreview() {
+  var params = new URLSearchParams(window.location.search);
+  var mqDesktop = window.matchMedia("(min-width: 769px)");
+  var count;
+
+  if (params.has("cart-preview")) {
+    var raw = params.get("cart-preview");
+    count = raw === "" || raw === null ? NaN : parseInt(raw, 10);
+  } else if (mqDesktop.matches) {
+    count = 6;
+  } else {
+    return;
+  }
+
+  function applyCartBadge() {
+  document.querySelectorAll(".header-tools__cart").forEach(function (cart) {
+    var badge = cart.querySelector(".header-tools__badge");
+    if (!badge) return;
+
+    cart.classList.add("header-tools__cart--has-items");
+    if (!isNaN(count) && count > 0) {
+      badge.textContent = String(count);
+    }
+    badge.removeAttribute("hidden");
+
+    var n = parseInt(badge.textContent, 10);
+    if (!isNaN(n) && n > 0) {
+      cart.setAttribute(
+        "aria-label",
+        "Корзина, " + n + " " + pluralRuItems(n)
+      );
+    }
+  });
+  }
+
+  applyCartBadge();
+
+  if (typeof mqDesktop.addEventListener === "function") {
+    mqDesktop.addEventListener("change", function () {
+      if (mqDesktop.matches) {
+        count = params.has("cart-preview")
+          ? parseInt(params.get("cart-preview"), 10) || 6
+          : 6;
+        applyCartBadge();
+      } else if (!params.has("cart-preview")) {
+        document.querySelectorAll(".header-tools__cart").forEach(function (cart) {
+          var badge = cart.querySelector(".header-tools__badge");
+          cart.classList.remove("header-tools__cart--has-items");
+          if (badge) badge.setAttribute("hidden", "");
+          cart.setAttribute("aria-label", "Корзина");
+        });
+      }
+    });
+  }
+
+  function pluralRuItems(n) {
+    var mod10 = n % 10;
+    var mod100 = n % 100;
+    if (mod100 >= 11 && mod100 <= 14) return "товаров";
+    if (mod10 === 1) return "товар";
+    if (mod10 >= 2 && mod10 <= 4) return "товара";
+    return "товаров";
+  }
+})();
+
+(function initHeaderLogoPagesHref() {
+  var pagesHref = "spisok-stranic.html";
+  var pagesLabel = "Список страниц сайта";
+
+  document
+    .querySelectorAll(".site-header a.logo, .mobile-menu__brand")
+    .forEach(function (link) {
+      link.href = pagesHref;
+      link.setAttribute("aria-label", pagesLabel);
+    });
 })();

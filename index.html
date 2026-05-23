@@ -14,7 +14,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="style.css?v=256" />
+    <link rel="stylesheet" href="style.css?v=303" />
   </head>
   <body id="top">
     <header class="site-header">
@@ -101,18 +101,36 @@
               </span>
             </span>
           </button>
-          <a class="header-tools__cart" href="#" aria-label="Корзина, 6 товаров">
+          <a class="header-tools__cart" href="#" aria-label="Корзина">
             <span class="header-tool-block header-tool-block--cart">
               <img
-                class="header-tool-block__frame"
+                class="header-tool-block__frame header-tool-block__frame--cart-wide"
                 src="assets/RamkaKorzini.webp"
                 width="65"
                 height="47"
                 alt=""
               />
+              <img
+                class="header-tool-block__frame header-tool-block__frame--cart-square"
+                src="assets/RamkaLypi.webp"
+                width="48"
+                height="47"
+                alt=""
+              />
               <span class="header-tool-block__inner header-tool-block__inner--cart">
-                <img src="assets/Korzina.webp" width="14" height="16" alt="" />
-                <span class="header-tools__badge" aria-hidden="true">6</span>
+                <svg
+                  class="header-tools__cart-svg"
+                  viewBox="0 0 16 16"
+                  width="17"
+                  height="17"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M14 13.1v-1.1h-9.4l0.6-1.1 9.2-0.9 1.6-6h-12.3l-0.7-3h-3v1h2.2l2.1 8.4-1.3 2.6v1.5c0 0.8 0.7 1.5 1.5 1.5s1.5-0.7 1.5-1.5-0.7-1.5-1.5-1.5h7.5v1.5c0 0.8 0.7 1.5 1.5 1.5s1.5-0.7 1.5-1.5c0-0.7-0.4-1.2-1-1.4z"
+                  />
+                </svg>
+                <span class="header-tools__badge" hidden>6</span>
               </span>
             </span>
           </a>
@@ -158,7 +176,7 @@
                 <div class="catalog-mega__cols">
                   <div class="catalog-mega__sub-panel" id="mega-sub-neo" hidden>
                     <ul class="catalog-mega__sub">
-                      <li><a href="katalog-neoklassika.html">Дарлинг Денди</a></li>
+                      <li><a href="kollektsiya-premera.html">Дарлинг Денди</a></li>
                       <li><a href="katalog-neoklassika.html">Сан Рейн</a></li>
                       <li><a href="katalog-neoklassika.html">Небо</a></li>
                       <li><a href="katalog-neoklassika.html">Тревел Полар Экспресс</a></li>
@@ -205,17 +223,19 @@
         </a>
         <button type="button" class="mobile-menu__close" aria-label="Закрыть меню">&times;</button>
         <nav class="mobile-menu__links" aria-label="Мобильное меню">
-          <a href="#collections">Каталог дверей</a>
-          <a href="#about">О компании</a>
-          <a href="#custom">Двери на заказ</a>
-          <a href="#geo">География продаж</a>
-          <a href="#dealers">Стать дилером</a>
-          <a href="#contacts">Контакты</a>
-          <button type="button" class="mobile-menu__callback" data-open-consult-modal>
-            Перезвоните мне
-          </button>
-          <a class="mobile-menu__phone" href="tel:+79872856270">+7 987 285-62-70</a>
+          <a href="index.html">Главная</a>
+          <a href="katalog-neoklassika.html">Каталог Неоклассика</a>
+          <a href="kollektsiya-premera.html">Коллекция Примьера</a>
+          <a href="tovar-layt-01.html">Карточка товара</a>
+          <a href="404.html">404</a>
         </nav>
+        <div class="mobile-menu__footer">
+          <div class="mobile-menu__rule" aria-hidden="true"></div>
+          <a class="mobile-menu__phone" href="tel:+79872856270">+7 987 285-62-70</a>
+          <button type="button" class="mobile-menu__order" data-open-consult-modal>
+            Заказать
+          </button>
+        </div>
       </div>
     </div>
 
@@ -234,7 +254,7 @@
             <p class="hero-intro__lead">
               Мы поможем создать эффектный уголок в вашем интерьере.
             </p>
-            <div class="hero-intro__media" id="heroMedia">
+            <a class="hero-intro__media" id="heroMedia" href="#">
               <img
                 class="hero-intro__media-bg"
                 src="assets/bbb.webp"
@@ -244,10 +264,10 @@
               />
               <span class="hero-intro__media-label">
                 <span class="hero-intro__media-title">Коллекция дверей</span>
-                <span class="hero-intro__media-year">/ 2026</span>
+                <span class="hero-intro__media-year"><sup>/ 2026</sup></span>
               </span>
-              <a class="hero-intro__media-ext" href="#">PDF</a>
-            </div>
+              <span class="hero-intro__media-ext">PDF</span>
+            </a>
           </div>
           <figure class="hero-intro__feature" id="heroFeature">
             <div class="hero-intro__feature-slides" aria-live="polite">
@@ -275,6 +295,15 @@
                   width="880"
                   height="760"
                   alt="Дверь коллекции Классика"
+                  loading="lazy"
+                />
+              </div>
+              <div class="hero-intro__feature-slide" data-caption="Коллекция Современный стиль">
+                <img
+                  src="assets/bbb.webp"
+                  width="880"
+                  height="760"
+                  alt="Дверь в современном интерьере"
                   loading="lazy"
                 />
               </div>
@@ -307,9 +336,10 @@
       </section>
 
       <section class="door-collections" id="collections" aria-label="Коллекции дверей">
-        <section class="collection-block" aria-labelledby="col-neo">
+        <section class="collection-block collection-block--neo" aria-labelledby="col-neo">
           <div class="container collection-block__head">
             <h2 id="col-neo" class="collection-block__title">
+              <span class="collection-block__title-text">Неоклассика</span>
               <a class="collection-block__title-link" href="katalog-neoklassika.html">Неоклассика</a>
             </h2>
             <a class="collection-block__more" href="katalog-neoklassika.html">
@@ -329,10 +359,12 @@
               <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <article class="door-card">
-                <div class="door-card__img">
-                  <img src="assets/Dveri1.webp" width="492" height="762" alt="Дарлинг Денди" loading="lazy" draggable="false" />
-                </div>
-                  <h3 class="door-card__name">Дарлинг Денди</h3>
+                  <a class="door-card__link" href="kollektsiya-premera.html">
+                    <div class="door-card__img">
+                      <img src="assets/Dveri1.webp" width="492" height="762" alt="Дарлинг Денди" loading="lazy" draggable="false" />
+                    </div>
+                    <h3 class="door-card__name">Дарлинг Денди</h3>
+                  </a>
                 </article>
               </div>
               <div class="swiper-slide">
@@ -551,56 +583,72 @@
       </section>
 
       <section class="about-split" id="about" aria-labelledby="aboutTitle">
-        <div class="about-split__grid about-split__grid--desktop">
-          <div class="about-split__text">
-            <span class="about-split__label">О нас</span>
-            <span class="about-split__rule" aria-hidden="true"></span>
-            <div class="about-split__inner">
-              <h2 id="aboutTitle" class="about-split__title">Инновации</h2>
-              <footer class="about-split__foot">
-                <p class="about-split__desc">
-                  <span class="about-split__desc-line">Для своей продукции мы выбираем только качественные материалы,</span>
-                  <span class="about-split__desc-line">используем безопасные технологии и современные подходы.</span>
-                </p>
-                <p class="about-split__pager" aria-hidden="true">
-                  <span class="about-split__pager-current">01</span><span class="about-split__pager-total"> / 02</span>
-                </p>
-              </footer>
-            </div>
-          </div>
-          <div class="about-split__visual swiper about-split__swiper about-split__swiper--desktop" data-about-swiper="desktop">
-            <div class="swiper-wrapper">
-              <div
-                class="swiper-slide"
-                data-title="Инновации"
-                data-desc-1="Для своей продукции мы выбираем только качественные материалы,"
-                data-desc-2="используем безопасные технологии и современные подходы."
-              >
-                <img
-                  class="about-split__img"
-                  src="assets/Innovations.webp"
-                  width="1100"
-                  height="935"
-                  alt="Мастер у стопки древесины"
-                  loading="lazy"
-                  draggable="false"
-                />
+        <div
+          class="about-split__swiper about-split__swiper--desktop swiper"
+          data-about-swiper="desktop"
+          aria-label="О нас — слайды"
+        >
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="about-split__grid about-split__grid--desktop">
+                <div class="about-split__text">
+                  <span class="about-split__label">О нас</span>
+                  <span class="about-split__rule" aria-hidden="true"></span>
+                  <div class="about-split__inner">
+                    <h2 id="aboutTitle" class="about-split__title">Инновации</h2>
+                    <footer class="about-split__foot">
+                      <p class="about-split__desc">
+                        <span class="about-split__desc-line">Для своей продукции мы выбираем только качественные материалы,</span>
+                        <span class="about-split__desc-line">используем безопасные технологии и современные подходы.</span>
+                      </p>
+                      <p class="about-split__pager" aria-hidden="true">
+                        <span class="about-split__pager-current">01</span><span class="about-split__pager-total"> / 02</span>
+                      </p>
+                    </footer>
+                  </div>
+                </div>
+                <div class="about-split__visual">
+                  <img
+                    class="about-split__img"
+                    src="assets/Innovations.webp"
+                    width="1100"
+                    height="935"
+                    alt="Мастер у стопки древесины"
+                    loading="lazy"
+                    draggable="false"
+                  />
+                </div>
               </div>
-              <div
-                class="swiper-slide"
-                data-title="Гарантии"
-                data-desc-1="Гарантируем высокое качество используемумых материалов,"
-                data-desc-2="пройденные все тесты"
-              >
-                <img
-                  class="about-split__img"
-                  src="assets/Innovations2.webp"
-                  width="1100"
-                  height="935"
-                  alt="Контроль качества материалов"
-                  loading="lazy"
-                  draggable="false"
-                />
+            </div>
+            <div class="swiper-slide">
+              <div class="about-split__grid about-split__grid--desktop">
+                <div class="about-split__text">
+                  <span class="about-split__label">О нас</span>
+                  <span class="about-split__rule" aria-hidden="true"></span>
+                  <div class="about-split__inner">
+                    <h2 class="about-split__title">Гарантии</h2>
+                    <footer class="about-split__foot">
+                      <p class="about-split__desc">
+                        <span class="about-split__desc-line">Гарантируем высокое качество используемумых материалов,</span>
+                        <span class="about-split__desc-line">пройденные все тесты</span>
+                      </p>
+                      <p class="about-split__pager" aria-hidden="true">
+                        <span class="about-split__pager-current">02</span><span class="about-split__pager-total"> / 02</span>
+                      </p>
+                    </footer>
+                  </div>
+                </div>
+                <div class="about-split__visual">
+                  <img
+                    class="about-split__img"
+                    src="assets/Innovations2.webp"
+                    width="1100"
+                    height="935"
+                    alt="Контроль качества материалов"
+                    loading="lazy"
+                    draggable="false"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -794,6 +842,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-    <script src="main.js?v=30" defer></script>
+    <script src="main.js?v=35" defer></script>
   </body>
 </html>
