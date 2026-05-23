@@ -2708,9 +2708,9 @@ body.mobile-menu-open {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.35;
-    min-height: calc(14px * 1.35);
+    min-height: calc(12px * 1.35);
   }
 
   .hero-intro__media-label,
@@ -3156,6 +3156,15 @@ body.mobile-menu-open {
   height: 100%;
   position: relative;
   z-index: 1;
+}
+
+/* Шоколадные крошки на печенье и россыпь у откуса — контраст к заливке #9d0d19 (как в ИСМА) */
+.cookie-banner__icon svg > circle:nth-child(n + 3):nth-child(-n + 7) {
+  fill: #6a0912;
+}
+
+.cookie-banner__icon svg > circle:nth-child(n + 8):nth-child(-n + 10) {
+  fill: #c81426;
 }
 
 .cookie-banner__icon::before {
