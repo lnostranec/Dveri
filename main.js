@@ -1323,6 +1323,32 @@
   }
 })();
 
+(function initBasketQty() {
+  document.querySelectorAll(".basket-item__qty").forEach(function (wrapper) {
+    var input = wrapper.querySelector("input[type='number']");
+    var decBtn = wrapper.querySelector("button:first-child");
+    var incBtn = wrapper.querySelector("button:last-child");
+    if (!input || !decBtn || !incBtn) return;
+
+    decBtn.addEventListener("click", function () {
+      var value = parseInt(input.value, 10);
+      if (Number.isNaN(value)) value = 1;
+      input.value = String(Math.max(1, value - 1));
+    });
+
+    incBtn.addEventListener("click", function () {
+      var value = parseInt(input.value, 10);
+      if (Number.isNaN(value)) value = 1;
+      input.value = String(value + 1);
+    });
+
+    input.addEventListener("change", function () {
+      var value = parseInt(input.value, 10);
+      input.value = String(Number.isNaN(value) || value < 1 ? 1 : value);
+    });
+  });
+})();
+
 (function initHeaderLogoPagesHref() {
   var pagesHref = "spisok-stranic.html";
   var pagesLabel = "Список страниц сайта";
