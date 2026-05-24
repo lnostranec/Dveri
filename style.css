@@ -5981,8 +5981,8 @@ body.catalog-mega-open .site-header {
   justify-content: center;
   border: 0;
   border-radius: 999px;
-  background: #e3e3e3;
-  color: var(--ink);
+  background-color: var(--footer-bg);
+  color: #fff;
   font-family: var(--font);
   font-weight: 300;
   font-size: clamp(12px, 0.78vw, 14px);
@@ -5992,7 +5992,7 @@ body.catalog-mega-open .site-header {
 }
 
 .basket-demo__clear:hover {
-  background: var(--accent-hot);
+  background-color: var(--accent-hot);
   color: #fff;
 }
 
@@ -6950,8 +6950,8 @@ body.catalog-mega-open .site-header {
   }
 
   .basket-demo__clear:hover {
-    background: #e3e3e3;
-    color: var(--ink);
+    background-color: var(--footer-bg);
+    color: #fff;
   }
 
   .basket-demo__checkout:hover,
