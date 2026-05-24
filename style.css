@@ -418,6 +418,8 @@ button {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .header-tools__search {
@@ -450,6 +452,7 @@ button {
   min-width: var(--header-search-w);
   width: auto;
   height: var(--header-tool-h);
+  overflow: hidden;
 }
 
 .header-tool-block__inner img,
@@ -473,6 +476,8 @@ button {
 
 .header-tool-block--cart .header-tool-block__frame {
   object-fit: fill;
+  border: 0;
+  outline: none;
 }
 
 .header-tools__badge[hidden] {
@@ -506,6 +511,9 @@ button {
   z-index: 1;
   inset: auto;
   box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--header-tool-h);
   gap: 0;
   padding: 0 var(--header-tool-pad-x);
 }
@@ -2424,6 +2432,7 @@ body.mobile-menu-open {
     height: var(--header-tool-h);
     max-height: var(--header-tool-h);
     box-sizing: border-box;
+    align-items: stretch;
   }
 
   .header-tools__phone,
@@ -2450,8 +2459,9 @@ body.mobile-menu-open {
     width: auto;
     min-width: var(--header-search-w);
     max-width: none;
-    height: 100%;
+    height: var(--header-tool-h);
     max-height: var(--header-tool-h);
+    overflow: hidden;
   }
 
   .header-tool-block--phone .header-tool-block__frame,
@@ -2463,6 +2473,12 @@ body.mobile-menu-open {
     width: 100%;
     height: 100%;
     object-fit: fill;
+    border: 0;
+    outline: none;
+  }
+
+  .header-tool-block__inner--cart {
+    min-height: var(--header-tool-h);
   }
 
   .header-tools__phone-svg,
@@ -6509,36 +6525,42 @@ body.catalog-mega-open .site-header {
 }
 
 .order-page .checkbox-container {
-  display: block;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.52vw;
   position: relative;
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
-  padding-left: 26px;
   cursor: pointer;
   user-select: none;
 }
 
 .order-page .checkbox-container p {
+  flex: 1;
+  min-width: 0;
   margin: 0;
   font-size: 0.73vw;
   font-weight: 300;
-  line-height: 140%;
+  line-height: 0.83vw;
   color: var(--ink);
 }
 
 .order-page .checkbox-container input {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.83vw;
+  height: 0.83vw;
+  min-width: 14px;
+  min-height: 14px;
   opacity: 0;
-  width: 0;
-  height: 0;
+  margin: 0;
   cursor: pointer;
 }
 
 .order-page .checkmark {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
+  position: relative;
+  flex-shrink: 0;
   width: 0.83vw;
   height: 0.83vw;
   min-width: 14px;
@@ -6823,11 +6845,17 @@ body.catalog-mega-open .site-header {
   }
 
   .order-page .checkbox-container {
-    padding-left: 6.4vw;
+    gap: 2.13vw;
+  }
+
+  .order-page .checkbox-container input {
+    width: 4.27vw;
+    height: 4.27vw;
   }
 
   .order-page .checkbox-container p {
     font-size: 4vw;
+    line-height: 4.27vw;
   }
 
   .order-page .checkmark {
