@@ -1269,7 +1269,7 @@
   } else if (mqDesktop.matches) {
     count = 6;
   } else {
-    return;
+    count = 12;
   }
 
   function applyCartBadge() {
@@ -1302,13 +1302,11 @@
           ? parseInt(params.get("cart-preview"), 10) || 6
           : 6;
         applyCartBadge();
-      } else if (!params.has("cart-preview")) {
-        document.querySelectorAll(".header-tools__cart").forEach(function (cart) {
-          var badge = cart.querySelector(".header-tools__badge");
-          cart.classList.remove("header-tools__cart--has-items");
-          if (badge) badge.setAttribute("hidden", "");
-          cart.setAttribute("aria-label", "Корзина");
-        });
+      } else {
+        count = params.has("cart-preview")
+          ? parseInt(params.get("cart-preview"), 10) || 12
+          : 12;
+        applyCartBadge();
       }
     });
   }
@@ -1345,6 +1343,42 @@
     input.addEventListener("change", function () {
       var value = parseInt(input.value, 10);
       input.value = String(Number.isNaN(value) || value < 1 ? 1 : value);
+    });
+  });
+})();
+
+(function initOrderInputLabels() {
+  document.querySelectorAll(".order-page .input input").forEach(function (field) {
+    var wrapper = field.closest(".input");
+    if (!wrapper) return;
+
+    function syncState() {
+      if (String(field.value || "").trim() === "") {
+        wrapper.classList.add("empty");
+      } else {
+        wrapper.classList.remove("empty");
+      }
+    }
+
+    syncState();
+    field.addEventListener("input", syncState);
+    field.addEventListener("change", syncState);
+  });
+})();
+
+(function initOrderInputFilters() {
+  var lettersPattern = /[^a-zA-Z\u0410-\u042F\u0430-\u044F\u0401\u0451\s-]/g;
+  var digitsPattern = /\D/g;
+
+  document.querySelectorAll("#order-name, #order-city").forEach(function (field) {
+    field.addEventListener("input", function () {
+      field.value = field.value.replace(lettersPattern, "");
+    });
+  });
+
+  document.querySelectorAll("#order-phone, #order-zip, #order-flat").forEach(function (field) {
+    field.addEventListener("input", function () {
+      field.value = field.value.replace(digitsPattern, "");
     });
   });
 })();

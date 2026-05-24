@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=309" />
+    <link rel="stylesheet" href="style.css?v=355" />
   </head>
   <body id="top" class="page-basket">
     <header class="site-header">
@@ -60,8 +60,7 @@
           </button>
           <a class="header-tools__cart header-tools__cart--has-items" href="basket.html" aria-label="Корзина, 2 товара">
             <span class="header-tool-block header-tool-block--cart">
-              <img class="header-tool-block__frame header-tool-block__frame--cart-wide" src="assets/RamkaKorzini.webp" width="65" height="47" alt="" />
-              <img class="header-tool-block__frame header-tool-block__frame--cart-square" src="assets/RamkaLypi.webp" width="48" height="47" alt="" />
+              <img class="header-tool-block__frame" src="assets/RamkaLypi.webp" width="48" height="47" alt="" />
               <span class="header-tool-block__inner header-tool-block__inner--cart">
                 <svg class="header-tools__cart-svg" viewBox="0 0 16 16" width="17" height="17" aria-hidden="true">
                   <path fill="currentColor" d="M14 13.1v-1.1h-9.4l0.6-1.1 9.2-0.9 1.6-6h-12.3l-0.7-3h-3v1h2.2l2.1 8.4-1.3 2.6v1.5c0 0.8 0.7 1.5 1.5 1.5s1.5-0.7 1.5-1.5-0.7-1.5-1.5-1.5h7.5v1.5c0 0.8 0.7 1.5 1.5 1.5s1.5-0.7 1.5-1.5c0-0.7-0.4-1.2-1-1.4z" />
@@ -188,19 +187,30 @@
                     </a>
                   </div>
                   <div class="basket-item__info">
-                    <p class="basket-item__art">Арт. 03</p>
                     <p class="basket-item__name">Лайт 01</p>
+                    <div class="basket-item__desc">
+                      <p>Артикул: 01</p>
+                      <p>Кромка: Обычная</p>
+                      <p>Толщина полотна: 20&nbsp;мм</p>
+                      <p>Отделка: дерево</p>
+                      <p>Молдинг: Белый</p>
+                    </div>
                   </div>
                   <div class="basket-item__controls">
-                    <p class="basket-item__price">25&nbsp;799&nbsp;₽</p>
-                    <div class="basket-item__qty">
-                      <button type="button" aria-label="Уменьшить количество">
-                        <span class="qty__btn-text qty__btn-text--minus" aria-hidden="true"></span>
-                      </button>
-                      <input type="number" min="1" value="1" aria-label="Количество" />
-                      <button type="button" aria-label="Увеличить количество">
-                        <span class="qty__btn-text qty__btn-text--plus" aria-hidden="true"></span>
-                      </button>
+                    <div class="basket-item__buy">
+                      <div class="basket-item__prices">
+                        <p class="basket-item__price-old">35&nbsp;000&nbsp;₽</p>
+                        <p class="basket-item__price">25&nbsp;799&nbsp;₽</p>
+                      </div>
+                      <div class="basket-item__qty">
+                        <button type="button" aria-label="Уменьшить количество">
+                          <span class="qty__btn-text qty__btn-text--minus" aria-hidden="true"></span>
+                        </button>
+                        <input type="number" min="1" value="1" aria-label="Количество" />
+                        <button type="button" aria-label="Увеличить количество">
+                          <span class="qty__btn-text qty__btn-text--plus" aria-hidden="true"></span>
+                        </button>
+                      </div>
                     </div>
                     <button type="button" class="basket-item__remove" aria-label="Удалить товар"></button>
                   </div>
@@ -213,19 +223,29 @@
                     </a>
                   </div>
                   <div class="basket-item__info">
-                    <p class="basket-item__art">Арт. 6513</p>
                     <p class="basket-item__name">Дарлинг Денди</p>
+                    <div class="basket-item__desc">
+                      <p>Артикул: 6513</p>
+                      <p>Кромка: ПВХ</p>
+                      <p>Толщина полотна: 40&nbsp;мм</p>
+                      <p>Отделка: ПЭТ-плёнка</p>
+                      <p>Молдинг: Денди</p>
+                    </div>
                   </div>
                   <div class="basket-item__controls">
-                    <p class="basket-item__price">32&nbsp;499&nbsp;₽</p>
-                    <div class="basket-item__qty">
-                      <button type="button" aria-label="Уменьшить количество">
-                        <span class="qty__btn-text qty__btn-text--minus" aria-hidden="true"></span>
-                      </button>
-                      <input type="number" min="1" value="1" aria-label="Количество" />
-                      <button type="button" aria-label="Увеличить количество">
-                        <span class="qty__btn-text qty__btn-text--plus" aria-hidden="true"></span>
-                      </button>
+                    <div class="basket-item__buy">
+                      <div class="basket-item__prices">
+                        <p class="basket-item__price">32&nbsp;499&nbsp;₽</p>
+                      </div>
+                      <div class="basket-item__qty">
+                        <button type="button" aria-label="Уменьшить количество">
+                          <span class="qty__btn-text qty__btn-text--minus" aria-hidden="true"></span>
+                        </button>
+                        <input type="number" min="1" value="1" aria-label="Количество" />
+                        <button type="button" aria-label="Увеличить количество">
+                          <span class="qty__btn-text qty__btn-text--plus" aria-hidden="true"></span>
+                        </button>
+                      </div>
                     </div>
                     <button type="button" class="basket-item__remove" aria-label="Удалить товар"></button>
                   </div>
@@ -237,15 +257,25 @@
             </div>
 
             <aside class="basket-demo__summary">
+              <div class="basket-demo__head">
+                <span class="basket-demo__head-title">Ваш заказ</span>
+                <span class="basket-demo__head-count">2 товара</span>
+              </div>
+              <div class="basket-demo__breakdown">
+                <div class="basket-demo__row">
+                  <span>Товары</span>
+                  <span>67&nbsp;499&nbsp;₽</span>
+                </div>
+                <div class="basket-demo__row">
+                  <span>Скидка</span>
+                  <span>−9&nbsp;201&nbsp;₽</span>
+                </div>
+              </div>
               <div class="basket-demo__total">
                 <span>Итого</span>
                 <span>58&nbsp;298&nbsp;₽</span>
               </div>
-              <div class="basket-demo__meta">
-                <p>2 товара</p>
-                <p>Без учёта возможной стоимости доставки</p>
-              </div>
-              <a href="#" class="basket-demo__checkout">Перейти к оформлению</a>
+              <a href="order.html" class="basket-demo__checkout">Перейти к оформлению</a>
             </aside>
           </div>
         </div>
