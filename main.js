@@ -1041,9 +1041,7 @@
 
   root.querySelectorAll(".door-product-variant").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var block = btn.closest(".door-product-variants__block");
-      if (!block) return;
-      block.querySelectorAll(".door-product-variant").forEach(function (b) {
+      root.querySelectorAll(".door-product-variant").forEach(function (b) {
         var on = b === btn;
         b.classList.toggle("is-active", on);
         b.setAttribute("aria-pressed", on ? "true" : "false");
