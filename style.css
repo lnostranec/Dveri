@@ -2066,6 +2066,7 @@ body.mobile-menu-open {
   .about-split {
     --about-label-size: clamp(18pt, 4.8vw, 22pt);
     --about-label-rule-gap: clamp(20px, 5vw, 28px);
+    --about-desc-lh: 1.45;
   }
 
   .about-split__text {
@@ -2124,7 +2125,11 @@ body.mobile-menu-open {
   }
 
   .about-split__desc-line {
-    text-align: center;
+    display: inline;
+  }
+
+  .about-split__desc-line + .about-split__desc-line::before {
+    content: " ";
   }
 
   .about-split__pager {
@@ -4222,6 +4227,7 @@ body.catalog-mega-open .site-header {
     margin: 0 0 20px;
     left: auto;
     right: auto;
+    line-height: 1.12;
   }
 
   .door-catalog-intro__desc {
